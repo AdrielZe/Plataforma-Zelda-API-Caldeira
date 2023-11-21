@@ -3,5 +3,5 @@
 <p>Adriel Silveira de Oliveira</p>
 <p>Iago Capeletti</p>
 <p>Lucas Vizeu</p>
-<p>Maicon Barbosa/p>
+<p>Maicon Barbosa>/p>
 <p>Djenifer Gurskas</p>
