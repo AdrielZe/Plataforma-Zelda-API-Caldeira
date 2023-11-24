@@ -1,0 +1,5 @@
+rootProject.name = 'zelda-projeto'
+include 'zelda-service'
+include 'user-crud'
+include 'user-crud'
+
