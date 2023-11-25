@@ -17,12 +17,12 @@ public class ZeldaController {
     private final ZeldaService zeldaService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> findByIdGames(@PathVariable String id) {
+    public ResponseEntity<ZeldaApi> findByIdGames(@PathVariable String id) {
         return ResponseEntity.ok(zeldaService.findByIdGames(id));
     }
 
     @GetMapping("/")
-    public ResponseEntity<?> listGames() {
+    public ResponseEntity<ZeldaApiList> listGames() {
         return ResponseEntity.ok(zeldaService.listGames());
     }
 }
