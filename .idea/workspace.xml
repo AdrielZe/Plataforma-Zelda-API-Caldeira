@@ -24,6 +24,16 @@
       <change beforePath="$PROJECT_DIR$/user-crud/src/main/java/com/zelda/zeldaprojeto/repositories/UserRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/user-crud/src/main/resources/application.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/user-crud/src/test/java/com/zelda/zeldaprojeto/ZeldaProjetoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-registry/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-registry/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-registry/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-registry/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-registry/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-registry/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-registry/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-registry/src/main/java/com/zeldaapi/zeldaregistry/ZeldaRegistryApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-registry/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-registry/src/test/java/com/zeldaapi/zeldaregistry/ZeldaRegistryApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/zelda-service/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/zelda-service/build.gradle" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/zelda-service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
@@ -52,9 +62,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2YmomuC85BCfX6jikdrjOBgaHLx" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -64,7 +74,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "adicionandoEureka"
+    "git-widget-placeholder": "main"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
