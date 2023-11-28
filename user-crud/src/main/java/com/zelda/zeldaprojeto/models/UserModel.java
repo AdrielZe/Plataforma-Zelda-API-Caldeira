@@ -18,8 +18,15 @@ public class UserModel {
     @Column(name="idade",nullable=false)
     private int idade;
 
+
+
     public void setId(Long id){
         this.id_user = id;
     }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
 
 }
