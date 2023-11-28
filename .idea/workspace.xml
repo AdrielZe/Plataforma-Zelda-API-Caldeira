@@ -4,29 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="824a342f-c698-46bf-9ca8-92f7f388a093" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zelda/zeldaprojeto/ZeldaProjetoApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zelda/zeldaprojeto/controllers/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zelda/zeldaprojeto/dtos/UserDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zelda/zeldaprojeto/models/UserModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zelda/zeldaprojeto/repositories/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/zelda/zeldaprojeto/ZeldaProjetoApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zelda-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/zelda-service/build.gradle" afterDir="false" />
+    <list default="true" id="8864dc77-464e-487d-b1c7-2bec69222978" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/user-crud/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-crud/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-crud/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-crud/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-crud/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-crud/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-crud/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-crud/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-crud/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-crud/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-crud/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-crud/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-crud/src/main/java/com/zelda/zeldaprojeto/ZeldaProjetoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-crud/src/main/java/com/zelda/zeldaprojeto/controllers/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-crud/src/main/java/com/zelda/zeldaprojeto/dtos/UserDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-crud/src/main/java/com/zelda/zeldaprojeto/models/UserModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-crud/src/main/java/com/zelda/zeldaprojeto/repositories/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-crud/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-crud/src/test/java/com/zelda/zeldaprojeto/ZeldaProjetoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-service/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-service/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-service/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-service/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-service/src/main/java/com/zelda/zeldaservice/ZeldaServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-service/src/main/java/com/zelda/zeldaservice/controller/ZeldaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-service/src/main/java/com/zelda/zeldaservice/model/DadosGamesZeldaDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-service/src/main/java/com/zelda/zeldaservice/model/ZeldaApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-service/src/main/java/com/zelda/zeldaservice/model/ZeldaApiList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-service/src/main/java/com/zelda/zeldaservice/service/ZeldaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-service/src/test/java/com/zelda/zeldaservice/ZeldaServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zelda-service/src/test/java/com/zelda/zeldaservice/zelda-controller/ZeldaControllerTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$">
-      <ProjectState />
-    </projectState>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,10 +53,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
+  "associatedIndex": 2
 }]]></component>
-  <component name="ProjectId" id="2YbgUXY3ev7ojsEncGFZs1dm9in" />
+  <component name="ProjectId" id="2YmomuC85BCfX6jikdrjOBgaHLx" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -47,43 +64,17 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "separandoPastas",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/adrie/OneDrive/Área de Trabalho/Plataforma-Zelda-API-Caldeira/user-crud",
-    "onboarding.tips.debug.path": "C:/Users/adrie/OneDrive/Área de Trabalho/Plataforma-Zelda-API-Caldeira/user-crud/src/main/java/com/zelda/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "git-widget-placeholder": "adicionandoEureka"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\adrie\OneDrive\Área de Trabalho\Plataforma-Zelda-API-Caldeira\user-crud" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Plataforma-Zelda-API-Caldeira" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Plataforma-Zelda-API-Caldeira" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="824a342f-c698-46bf-9ca8-92f7f388a093" name="Changes" comment="" />
-      <created>1700799713224</created>
+      <changelist id="8864dc77-464e-487d-b1c7-2bec69222978" name="Changes" comment="" />
+      <created>1701140277785</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1700799713224</updated>
+      <updated>1701140277785</updated>
     </task>
     <servers />
   </component>

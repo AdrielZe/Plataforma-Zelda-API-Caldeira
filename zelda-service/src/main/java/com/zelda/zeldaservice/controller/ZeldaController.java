@@ -1,5 +1,7 @@
 package com.zelda.zeldaservice.controller;
 
+import com.zelda.zeldaservice.model.ZeldaApi;
+import com.zelda.zeldaservice.model.ZeldaApiList;
 import com.zelda.zeldaservice.service.ZeldaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
