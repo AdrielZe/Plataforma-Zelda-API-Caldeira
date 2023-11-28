@@ -1,5 +1,6 @@
 package com.zelda.zeldaservice.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
