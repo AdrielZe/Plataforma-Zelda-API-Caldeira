@@ -3,6 +3,7 @@ package com.zelda.zeldaservice.model;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class DadosGamesZeldaDTO {
 
     private String name;
