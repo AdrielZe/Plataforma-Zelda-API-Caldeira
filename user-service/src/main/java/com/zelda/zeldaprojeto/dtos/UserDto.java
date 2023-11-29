@@ -5,18 +5,18 @@ import jakarta.validation.constraints.NotBlank;
 public class UserDto {
 
     @NotBlank
-    private Long id_user;
+    private Long id;
     @NotBlank
     private String nome;
     @NotBlank
     private String idade;
 
-    public Long getId_user() {
-        return id_user;
+    public Long getId() {
+        return this.id;
     }
 
-    public void setId_user(Long id_user) {
-        this.id_user = id_user;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
