@@ -35,7 +35,8 @@ public class UserController {
 
     @GetMapping("{id}")
     public ResponseEntity<List<UserModel>> buscarUsuario(@PathVariable Long id) {
-        return userService.buscarUsuario(id);
+        return
+userService.buscarUsuario(id);
     }
 
     @PutMapping(value = "{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
