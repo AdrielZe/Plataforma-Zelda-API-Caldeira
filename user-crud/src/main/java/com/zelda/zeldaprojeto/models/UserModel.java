@@ -29,4 +29,8 @@ public class UserModel {
     }
 
 
+    public String getNome() {
+        return nome;
+    }
+
 }

@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="824a342f-c698-46bf-9ca8-92f7f388a093" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/user-crud/src/test/java/com/zelda/zeldaprojeto/controllers/UserControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-crud/src/test/java/com/zelda/zeldaprojeto/repositories/UserRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-crud/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/user-crud/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-crud/src/main/java/com/zelda/zeldaprojeto/models/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-crud/src/main/java/com/zelda/zeldaprojeto/models/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-crud/src/main/java/com/zelda/zeldaprojeto/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-crud/src/main/java/com/zelda/zeldaprojeto/repositories/UserRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,21 +70,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "Testes",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/adrie/OneDrive/Área de Trabalho/Plataforma-Zelda-API-Caldeira/user-crud",
-    "onboarding.tips.debug.path": "C:/Users/adrie/OneDrive/Área de Trabalho/Plataforma-Zelda-API-Caldeira/user-crud/src/main/java/com/zelda/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Testes&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/adrie/OneDrive/Área de Trabalho/Plataforma-Zelda-API-Caldeira/user-crud&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/adrie/OneDrive/Área de Trabalho/Plataforma-Zelda-API-Caldeira/user-crud/src/main/java/com/zelda/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\adrie\OneDrive\Área de Trabalho\Plataforma-Zelda-API-Caldeira\user-crud" />
@@ -90,10 +93,11 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.zelda.zeldaprojeto.repositories" />
       <recent name="com.zelda.zeldaprojeto.controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.UserControllerTest.editarUsuario">
+  <component name="RunManager" selected="Gradle.UserRepositoryTest.testFindByNome">
     <configuration name="UserControllerTest.adicionarUsuario" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -108,30 +112,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;com.zelda.zeldaprojeto.controllers.UserControllerTest.adicionarUsuario&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="UserControllerTest.buscarUsuario" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/user-crud" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.zelda.zeldaprojeto.controllers.UserControllerTest.buscarUsuario&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -190,7 +170,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="UserControllerTest.listarUsuarios" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/user-crud" />
@@ -203,7 +183,31 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.zelda.zeldaprojeto.controllers.UserControllerTest.listarUsuarios&quot;" />
+            <option value="&quot;com.zelda.zeldaprojeto.repositories.UserRepositoryTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserRepositoryTest.testFindByNome" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/user-crud" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.zelda.zeldaprojeto.repositories.UserRepositoryTest.testFindByNome&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -229,11 +233,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.UserRepositoryTest.testFindByNome" />
+        <item itemvalue="Gradle.UserRepositoryTest" />
         <item itemvalue="Gradle.UserControllerTest.editarUsuario" />
         <item itemvalue="Gradle.UserControllerTest.adicionarUsuario" />
         <item itemvalue="Gradle.UserControllerTest.deletarUsuario" />
-        <item itemvalue="Gradle.UserControllerTest.buscarUsuario" />
-        <item itemvalue="Gradle.UserControllerTest.listarUsuarios" />
       </list>
     </recent_temporary>
   </component>
