@@ -2,20 +2,23 @@ package com.zelda.zeldaprojeto.services;
 
         import com.zelda.zeldaprojeto.models.UserModel;
         import com.zelda.zeldaprojeto.repositories.UserRepository;
+        import lombok.RequiredArgsConstructor;
         import org.springframework.beans.factory.annotation.Autowired;
+        import org.springframework.data.domain.Page;
+        import org.springframework.data.domain.Pageable;
         import org.springframework.http.ResponseEntity;
         import org.springframework.stereotype.Service;
 
 
         import java.util.List;
         @Service
+        @RequiredArgsConstructor
 public class UserService {
 
-            @Autowired
-            private UserRepository userRepository;
+            private final UserRepository userRepository;
 
-            public ResponseEntity<List<UserModel>> acharTodosUsuarios() {
-                return ResponseEntity.ok(userRepository.findAll());
+            public ResponseEntity<Page<UserModel>> acharTodosUsuarios(Pageable pageable) {
+                return ResponseEntity.ok(userRepository.findAll(pageable));
             }
 
             public ResponseEntity<UserModel> adicionarUsuario(UserModel user) {
@@ -34,14 +37,6 @@ public class UserService {
                 if (userRepository.existsById(id_user)) {
                     user.setId(id_user);
                     return ResponseEntity.ok(userRepository.save(user));
-                }
-                return ResponseEntity.notFound().build();
-            }
-
-            public ResponseEntity<String> deletarUsuario(Long id) {
-                if (userRepository.existsById(id)) {
-                    userRepository.deleteById(id);
-                    return ResponseEntity.ok("Usuário deletado com sucesso");
                 }
                 return ResponseEntity.notFound().build();
             }
