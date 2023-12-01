@@ -3,29 +3,27 @@ package com.zelda.zeldaprojeto.controllers;
 import com.zelda.zeldaprojeto.models.UserModel;
 import com.zelda.zeldaprojeto.repositories.UserRepository;
 import com.zelda.zeldaprojeto.services.UserService;
-import org.apache.catalina.User;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/usuarios")
+@RequiredArgsConstructor
 public class UserController {
 
-    @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private UserService userService;
+    private final UserRepository userRepository;
+    private final UserService userService;
 
     @GetMapping
-    public ResponseEntity<List<UserModel>> acharTodosUsuarios(){
-        return userService.acharTodosUsuarios();
+    public ResponseEntity<Page<UserModel>> acharTodosUsuarios(@PageableDefault(size = 10, sort = {"id"}) Pageable pageable){
+        return userService.acharTodosUsuarios(pageable);
     }
 
     @PostMapping(value = "/adicionar", consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -35,8 +33,7 @@ public class UserController {
 
     @GetMapping("{id}")
     public ResponseEntity<List<UserModel>> buscarUsuario(@PathVariable Long id) {
-        return
-userService.buscarUsuario(id);
+        return userService.buscarUsuario(id);
     }
 
     @PutMapping(value = "{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -45,8 +42,10 @@ userService.buscarUsuario(id);
     }
 
     @DeleteMapping("{id}")
-    public void deletarUsuario(@PathVariable Long id){
+    public ResponseEntity<UserModel> deletarUsuario(@PathVariable Long id) {
         userRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
+
 
 }
