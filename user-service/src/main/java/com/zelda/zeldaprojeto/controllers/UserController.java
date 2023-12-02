@@ -18,8 +18,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
 
-    private final UserRepository userRepository;
-    private final UserService userService;
+    private  UserRepository userRepository;
+    private  UserService userService;
+
+
 
     @GetMapping
     public ResponseEntity<Page<UserModel>> acharTodosUsuarios(@PageableDefault(size = 10, sort = {"id"}) Pageable pageable){

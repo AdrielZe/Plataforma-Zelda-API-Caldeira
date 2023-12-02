@@ -3,7 +3,6 @@ package com.zelda.zeldaprojeto.services;
         import com.zelda.zeldaprojeto.models.UserModel;
         import com.zelda.zeldaprojeto.repositories.UserRepository;
         import lombok.RequiredArgsConstructor;
-        import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.data.domain.Page;
         import org.springframework.data.domain.Pageable;
         import org.springframework.http.ResponseEntity;
@@ -15,7 +14,8 @@ package com.zelda.zeldaprojeto.services;
         @RequiredArgsConstructor
 public class UserService {
 
-            private final UserRepository userRepository;
+            private UserRepository userRepository;
+
 
             public ResponseEntity<Page<UserModel>> acharTodosUsuarios(Pageable pageable) {
                 return ResponseEntity.ok(userRepository.findAll(pageable));
