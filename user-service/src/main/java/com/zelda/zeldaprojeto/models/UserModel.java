@@ -38,4 +38,7 @@ public class UserModel {
     public void setIdade(int idade){
         this.idade = idade;
     }
+
+    public void setFieldName(String expectedValue) {
+    }
 }
