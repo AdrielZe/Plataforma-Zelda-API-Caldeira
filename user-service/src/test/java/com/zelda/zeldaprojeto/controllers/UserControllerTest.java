@@ -4,6 +4,38 @@ import com.zelda.zeldaprojeto.services.UserService;
 import org.junit.jupiter.api.Test;
 import com.zelda.zeldaprojeto.models.UserModel;
 import com.zelda.zeldaprojeto.repositories.UserRepository;
+import org.mockito.*;
+import org.skyscreamer.jsonassert.JSONAssert;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.junit.jupiter.api.BeforeEach;
+
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
+
+import java.util.*;
+
+import static org.mockito.ArgumentMatchers.any;
+import com.jayway.jsonpath.JsonPath;
+import com.jayway.jsonpath.PathNotFoundException;
+import org.junit.jupiter.api.Test;
+import com.zelda.zeldaprojeto.models.UserModel;
+import com.zelda.zeldaprojeto.repositories.UserRepository;
+import org.springframework.http.MediaType;
+
+import com.zelda.zeldaprojeto.services.UserService;
+import org.junit.jupiter.api.Test;
+import com.zelda.zeldaprojeto.models.UserModel;
+import com.zelda.zeldaprojeto.repositories.UserRepository;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MvcResult;
@@ -26,6 +58,70 @@ import static org.mockito.Mockito.*;
 import java.util.Collections;
 import java.util.List;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.doNothing;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.test.web.servlet.MockMvc;
+import java.util.List;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.doNothing;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import java.util.Arrays;
+import org.junit.jupiter.api.BeforeEach;
+import com.zelda.zeldaprojeto.models.UserModel;
+import com.zelda.zeldaprojeto.repositories.UserRepository;
+import com.zelda.zeldaprojeto.services.UserService;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
+
+import com.zelda.zeldaprojeto.models.UserModel;
+import com.zelda.zeldaprojeto.repositories.UserRepository;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import java.util.List;
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
+
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -57,89 +153,67 @@ public class UserControllerTest {
     }
 
     @Test
-    void listarUsuarios() throws Exception {
-        List<UserModel> userList = Arrays.asList(new UserModel(), new UserModel());
-        when(userRepository.findAll()).thenReturn(userList);
+    void listarUsuarios_null() throws Exception {
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/usuarios"))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.content().json("[{}, {}]"));
+        doReturn(null)
+                .when(userService)
+                .acharTodosUsuarios();
 
-        verify(userRepository, times(1)).findAll();
+        var result = userController.acharTodosUsuarios();
+
+        assertEquals(httpStatus.INTERNSL_SERVER_ERROR, result.getStatusCode());
+
     }
 
+
+
     @Test
-    void adicionarUsuario() throws Exception {
-        String requestBody = "{\"id\": 1, \"nome\": \"NovoUsuario\"}";
-        UserModel user = new UserModel();
-        user.setId(1L);
-        user.setNome("NovoUsuario");
-
-        when(userService.adicionarUsuario(any(UserModel.class))).thenReturn(user);
-
-        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.post("/usuarios/adicionar")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(requestBody))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andReturn();
-
-        verify(userService, times(1)).adicionarUsuario(any(UserModel.class));
+    void buscarUsuario_sucess() throws Exception {
+        var mockedResponse = GamesByIdViewModel
+                .builder()
+                .sucess(true)
+                .data(getGameDataViewModel(1))
+                .build();
     }
+    doReturn(mockedResponse)
+        .when(usuarioService)
+        .getgamesbyId(any());
+
+    var result = userController.buscarUsuario("ïdqualque");
+
+    assertNotNull(result);
+    assertEquals(httpStatus.OK, result.getStatusCode());
+    assertNotNull(result.getBody());
+    assertTrue(result.getBody().isSucess());
+    assertNotNull(result.getBody().getData());
+
 
     @Test
-    void buscarUsuario() throws Exception {
-        // Faz a chamada à API
-        mockMvc.perform(MockMvcRequestBuilders.get("/usuarios/1"))
-                .andExpect(MockMvcResultMatchers.status().isOk()) // Verifica se a resposta é 200 OK
-                .andExpect(MockMvcResultMatchers.content().string(org.hamcrest.Matchers.not(org.hamcrest.Matchers.emptyString())));
-
-        // Seu JSON esperado
-        String expectedJson = "{ \"fieldName\": \"value\" }";
-
-        // Obtém a resposta como String
-        String responseContent = mockMvc.perform(MockMvcRequestBuilders.get("/usuarios/1"))
-                .andExpect(MockMvcResultMatchers.status().isOk()) // Verifica se a resposta é 200 OK
-                .andReturn()
-                .getResponse()
-                .getContentAsString();
-
-        // Imprime a resposta
-        System.out.println("Response Content: " + responseContent);
-        // Imprime a resposta e o JSON esperado
-        System.out.println("Expected JSON: " + expectedJson);
-
-        // Faz a comparação JSON
-        JSONAssert.assertEquals(expectedJson, responseContent, false);
-    }
-
-    @Test
-    void editarUsuario() throws Exception {
+    void editarUsuario_sucess() throws Exception {
         // Arrange
-        Long userId = 1L;
-        UserModel userToUpdate = new UserModel();
-        userToUpdate.setId(userId);
-        userToUpdate.setNome("NovoNome");
+        int testSize = 3;
 
-        // Simular que o serviço de usuário retorna um usuário atualizado
-        when(userService.editarUsuario(anyLong(), any(UserModel.class))).thenReturn(userToUpdate);
+        var list = new ArrayList<GamesDataViewModel>();
+        for (int i = 0; i < testSize; i++){
+            list.add(getGameDataViewModel(i));
 
-        // Act and Assert
-        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.put("/usuarios/{id}", userId)
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(userToUpdate)))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andReturn();
+        }
+        var mockedResponse = allGamesViewModel
+                .builder()
+                .sucess()
+                .count(list.size())
+                .data(list)
+                .build();
+        doReturn(mockedResponse)
+                .when(zeldaServiceMock)
+                .getAllGames();
 
-        // Verificar se o JSON retornado contém as informações esperadas
-        mockMvc.perform(MockMvcRequestBuilders.get("/usuarios/{id}", userId))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(userId))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.nome").value("NovoNome"));
+        var result = zeldaControler.getAllGames();
 
-        // Verificar se o método do serviço foi chamado
-        verify(userService, times(1)).editarUsuario(anyLong(), any(UserModel.class));
-    }
-    @Test
+        assertNotNull(result);
+        assertEquals(httpStatus.OK, result.getStatusCode());
+
+   @Test
     void deletarUsuario() throws Exception {
         // Configurar o comportamento do repositório
         doNothing().when(userRepository).deleteById(1L);

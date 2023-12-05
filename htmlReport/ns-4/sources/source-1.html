@@ -1,0 +1,148 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > UserModel</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.zelda.zeldaprojeto.models</a>
+</div>
+
+<h1>Coverage Summary for Class: UserModel (com.zelda.zeldaprojeto.models)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">UserModel</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    25%
+  </span>
+  <span class="absValue">
+    (2/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    25%
+  </span>
+  <span class="absValue">
+    (2/8)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.zelda.zeldaprojeto.models;
+&nbsp;
+&nbsp;import jakarta.persistence.*;
+&nbsp;import lombok.Data;
+&nbsp;
+&nbsp;@Entity
+<b class="fc">&nbsp;@Data</b>
+&nbsp;@Table(name = &quot;users&quot;)
+&nbsp;
+&nbsp;
+&nbsp;public class UserModel {
+&nbsp;    @Id
+&nbsp;    @GeneratedValue(strategy = GenerationType.IDENTITY)
+&nbsp;    @Column(name=&quot;id&quot;,nullable = false)
+&nbsp;    private Long id;
+&nbsp;    @Column(name=&quot;nome&quot;, nullable = false)
+&nbsp;    private String nome;
+&nbsp;    @Column(name=&quot;idade&quot;,nullable=false)
+<b class="nc">&nbsp;    private int idade;</b>
+&nbsp;
+&nbsp;    public void setId(Long id){
+<b class="fc">&nbsp;        this.id = id;</b>
+&nbsp;    }
+&nbsp;    public Long getId(){
+<b class="nc">&nbsp;        return this.id;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    public void setNome(String nome) {
+<b class="nc">&nbsp;        this.nome = nome;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    public String getNome() {
+<b class="nc">&nbsp;        return nome;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setIdade(int idade){
+<b class="nc">&nbsp;        this.idade = idade;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setFieldName(String expectedValue) {
+<b class="nc">&nbsp;    }</b>
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-05 14:35</div>
+</div>
+</body>
+</html>

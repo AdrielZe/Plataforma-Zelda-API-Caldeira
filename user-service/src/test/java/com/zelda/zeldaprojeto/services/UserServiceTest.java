@@ -7,6 +7,41 @@ import org.junit.jupiter.api.Test;
 import com.zelda.zeldaprojeto.models.UserModel;
 import com.zelda.zeldaprojeto.repositories.UserRepository;
 import org.springframework.http.MediaType;
+
+import com.zelda.zeldaprojeto.services.UserService;
+import org.junit.jupiter.api.Test;
+import com.zelda.zeldaprojeto.models.UserModel;
+import com.zelda.zeldaprojeto.repositories.UserRepository;
+import org.skyscreamer.jsonassert.JSONAssert;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.junit.jupiter.api.BeforeEach;
+
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
+import java.util.Collections;
+import java.util.List;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.doNothing;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import java.util.Arrays;
+import org.junit.jupiter.api.BeforeEach;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.test.web.servlet.MockMvc;
@@ -183,4 +218,5 @@ class UserServiceTest {
         // Verificar o resultado
         assertEquals(404, responseEntity.getStatusCodeValue());
     }
+
 }
