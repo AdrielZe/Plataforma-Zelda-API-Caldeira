@@ -1,103 +1,24 @@
 package com.zelda.zeldaprojeto.services;
-
-
-import com.jayway.jsonpath.JsonPath;
-import com.jayway.jsonpath.PathNotFoundException;
 import org.junit.jupiter.api.Test;
 import com.zelda.zeldaprojeto.models.UserModel;
 import com.zelda.zeldaprojeto.repositories.UserRepository;
-import org.springframework.http.MediaType;
-
-import com.zelda.zeldaprojeto.services.UserService;
-import org.junit.jupiter.api.Test;
-import com.zelda.zeldaprojeto.models.UserModel;
-import com.zelda.zeldaprojeto.repositories.UserRepository;
-import org.skyscreamer.jsonassert.JSONAssert;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import org.junit.jupiter.api.BeforeEach;
-
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
-import java.util.Collections;
 import java.util.List;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.doNothing;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import java.util.Arrays;
-import org.junit.jupiter.api.BeforeEach;
-import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.test.web.servlet.MockMvc;
-import java.util.List;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.never;
-import static org.mockito.Mockito.doNothing;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import java.util.Arrays;
-import org.junit.jupiter.api.BeforeEach;
-import com.zelda.zeldaprojeto.models.UserModel;
-import com.zelda.zeldaprojeto.repositories.UserRepository;
-import com.zelda.zeldaprojeto.services.UserService;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-
-import java.util.List;
 import java.util.Optional;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
 
-import com.zelda.zeldaprojeto.models.UserModel;
-import com.zelda.zeldaprojeto.repositories.UserRepository;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-
-import java.util.List;
-import java.util.Optional;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
 
 @ExtendWith(SpringExtension.class)
 class UserServiceTest {
@@ -111,33 +32,36 @@ class UserServiceTest {
     @Test
     void testAcharTodosUsuarios() {
         // Mock do retorno do repositório
-        List<UserModel> userList = List.of(new UserModel(), new UserModel());
+        List<UserModel> userList = List.of(
+                new UserModel(1L, "Lucas", 25), // Adicione valores apropriados
+                new UserModel(2L, "Vizeu", 30)  // Adicione valores apropriados
+        );
         Page<UserModel> userPage = new PageImpl<>(userList);
 
         // Configurar o comportamento do repositório
         when(userRepository.findAll(any(Pageable.class))).thenReturn(userPage);
 
-        // Executar o serviço
+        // Act
         ResponseEntity<Page<UserModel>> responseEntity = userService.acharTodosUsuarios(Pageable.unpaged());
 
-        // Verificar o resultado
-        assertEquals(200, responseEntity.getStatusCodeValue());
+        // Assert
+        assertEquals(200, responseEntity.getStatusCode().value());
         assertEquals(userPage, responseEntity.getBody());
     }
 
     @Test
     void testAdicionarUsuario() {
         // Mock do usuário a ser adicionado
-        UserModel newUser = new UserModel();
+        UserModel newUser = new UserModel(1L, "Iago", 22); // Fornecer valores adequados
 
-        // Configurar o comportamento do repositório
+        // Arrange
         when(userRepository.save(newUser)).thenReturn(newUser);
 
-        // Executar o serviço
+        //  Act
         ResponseEntity<UserModel> responseEntity = userService.adicionarUsuario(newUser);
 
-        // Verificar o resultado
-        assertEquals(200, responseEntity.getStatusCodeValue());
+        // Assert
+        assertEquals(200, responseEntity.getStatusCode().value());
         assertEquals(newUser, responseEntity.getBody());
     }
 
@@ -148,7 +72,7 @@ class UserServiceTest {
 
         ResponseEntity<List<UserModel>> response = userService.buscarUsuario(userId);
 
-        assertEquals(404, response.getStatusCodeValue());
+        assertEquals(404, response.getStatusCode().value());
         verify(userRepository, times(1)).findById(userId);
     }
 
@@ -157,9 +81,9 @@ class UserServiceTest {
         long userId = 1L;
         when(userRepository.existsById(userId)).thenReturn(false);
 
-        ResponseEntity<UserModel> response = userService.editarUsuario(userId, new UserModel());
+        ResponseEntity<UserModel> response = userService.editarUsuario(userId, new UserModel(1L, "Adriel", 20));
 
-        assertEquals(404, response.getStatusCodeValue());
+        assertEquals(404, response.getStatusCode().value());
         verify(userRepository, times(1)).existsById(userId);
         verify(userRepository, never()).findById(userId);
         verify(userRepository, never()).save(any(UserModel.class));
@@ -167,17 +91,17 @@ class UserServiceTest {
 
     @Test
     void testBuscarUsuarioQuandoNaoEncontradoComDiferenca() {
-        // ID do usuário a ser buscado
+        // Arrange
         Long userId = 1L;
 
-        // Configurar o comportamento do repositório
+        //  Act
         when(userRepository.findById(userId)).thenReturn(Optional.empty());
 
-        // Executar o serviço
+        //  Act
         ResponseEntity<List<UserModel>> responseEntity = userService.buscarUsuario(userId);
 
-        // Verificar o resultado
-        assertEquals(404, responseEntity.getStatusCodeValue());
+        // Assert
+        assertEquals(404, responseEntity.getStatusCode().value());
     }
 
     @Test
@@ -185,19 +109,18 @@ class UserServiceTest {
         // ID do usuário a ser editado
         Long userId = 1L;
 
-        // Mock do usuário
-        UserModel updatedUser = new UserModel();
-        updatedUser.setId(userId);
+        // Arrange
+        UserModel updatedUser = new UserModel(1L, "NomeAtualizadoVizeu", 30);
 
-        // Configurar o comportamento do repositório
+        //  Act
         when(userRepository.existsById(userId)).thenReturn(true);
         when(userRepository.save(updatedUser)).thenReturn(updatedUser);
 
-        // Executa
+        //  Act
         ResponseEntity<UserModel> responseEntity = userService.editarUsuario(userId, updatedUser);
 
-        // Verificar o resultado
-        assertEquals(200, responseEntity.getStatusCodeValue());
+        // Assert
+        assertEquals(200, responseEntity.getStatusCode().value());
         assertEquals(updatedUser, responseEntity.getBody());
     }
 
@@ -206,17 +129,16 @@ class UserServiceTest {
         // ID do usuário a ser editado
         Long userId = 1L;
 
-        // Mock do usuário a ser editado
-        UserModel updatedUser = new UserModel();
+        // Arrange
+        UserModel updatedUser = new UserModel(1L, "NomeAtualizadoVizeu", 30);
 
-        // Configurar o comportamento do repositório
+        //  Act
         when(userRepository.existsById(userId)).thenReturn(false);
 
-        // Executar o serviço
+        //  Act
         ResponseEntity<UserModel> responseEntity = userService.editarUsuario(userId, updatedUser);
 
-        // Verificar o resultado
-        assertEquals(404, responseEntity.getStatusCodeValue());
+        // Assert
+        assertEquals(404, responseEntity.getStatusCode().value());
     }
-
 }
