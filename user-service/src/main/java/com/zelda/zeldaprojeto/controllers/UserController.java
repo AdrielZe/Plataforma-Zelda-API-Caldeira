@@ -4,6 +4,7 @@ import com.zelda.zeldaprojeto.models.UserModel;
 import com.zelda.zeldaprojeto.repositories.UserRepository;
 import com.zelda.zeldaprojeto.services.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -18,8 +19,12 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
 
-    private final UserRepository userRepository;
-    private final UserService userService;
+    private  UserRepository userRepository;
+    @Autowired
+    private  UserService userService;
+
+
+
 
     @GetMapping
     public ResponseEntity<Page<UserModel>> acharTodosUsuarios(@PageableDefault(size = 10, sort = {"id"}) Pageable pageable){
