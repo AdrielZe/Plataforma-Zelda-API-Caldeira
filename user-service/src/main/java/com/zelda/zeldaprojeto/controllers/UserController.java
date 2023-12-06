@@ -19,11 +19,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
 
-    private  UserRepository userRepository;
-    @Autowired
-    private  UserService userService;
-
-
+    private final UserRepository userRepository;
+    private final UserService userService;
 
 
     @GetMapping
