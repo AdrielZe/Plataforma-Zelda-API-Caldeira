@@ -1,137 +1,38 @@
 package com.zelda.zeldaprojeto.controllers;
-
 import com.zelda.zeldaprojeto.services.UserService;
 import org.junit.jupiter.api.Test;
 import com.zelda.zeldaprojeto.models.UserModel;
 import com.zelda.zeldaprojeto.repositories.UserRepository;
-import org.mockito.*;
-import org.skyscreamer.jsonassert.JSONAssert;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MvcResult;
+
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import org.junit.jupiter.api.BeforeEach;
 
-import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
-
-import java.util.*;
-
-import static org.mockito.ArgumentMatchers.any;
-import com.jayway.jsonpath.JsonPath;
-import com.jayway.jsonpath.PathNotFoundException;
-import org.junit.jupiter.api.Test;
-import com.zelda.zeldaprojeto.models.UserModel;
-import com.zelda.zeldaprojeto.repositories.UserRepository;
-import org.springframework.http.MediaType;
-
-import com.zelda.zeldaprojeto.services.UserService;
-import org.junit.jupiter.api.Test;
-import com.zelda.zeldaprojeto.models.UserModel;
-import com.zelda.zeldaprojeto.repositories.UserRepository;
-import org.skyscreamer.jsonassert.JSONAssert;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import org.junit.jupiter.api.BeforeEach;
 
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
 import java.util.Collections;
-import java.util.List;
-import static org.mockito.ArgumentMatchers.any;
+
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.doNothing;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.test.web.servlet.MockMvc;
-import java.util.List;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.never;
-import static org.mockito.Mockito.doNothing;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import java.util.Arrays;
-import org.junit.jupiter.api.BeforeEach;
-import com.zelda.zeldaprojeto.models.UserModel;
-import com.zelda.zeldaprojeto.repositories.UserRepository;
-import com.zelda.zeldaprojeto.services.UserService;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.Pageable;
-import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
 
-import com.zelda.zeldaprojeto.models.UserModel;
-import com.zelda.zeldaprojeto.repositories.UserRepository;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.http.HttpStatus;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import java.util.List;
-import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
-
-import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.doNothing;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import java.util.Arrays;
-import org.junit.jupiter.api.BeforeEach;
 
 public class UserControllerTest {
+
     private MockMvc mockMvc;
 
     @Mock
@@ -149,81 +50,71 @@ public class UserControllerTest {
     void setUp() {
         MockitoAnnotations.openMocks(this);
         mockMvc = MockMvcBuilders.standaloneSetup(userController).build();
-
     }
 
     @Test
-    void listarUsuarios_null() throws Exception {
-
-        doReturn(null)
-                .when(userService)
-                .acharTodosUsuarios();
-
-        var result = userController.acharTodosUsuarios();
-
-        assertEquals(httpStatus.INTERNSL_SERVER_ERROR, result.getStatusCode());
-
-    }
-
-
-
-    @Test
-    void buscarUsuario_sucess() throws Exception {
-        var mockedResponse = GamesByIdViewModel
-                .builder()
-                .sucess(true)
-                .data(getGameDataViewModel(1))
-                .build();
-    }
-    doReturn(mockedResponse)
-        .when(usuarioService)
-        .getgamesbyId(any());
-
-    var result = userController.buscarUsuario("ïdqualque");
-
-    assertNotNull(result);
-    assertEquals(httpStatus.OK, result.getStatusCode());
-    assertNotNull(result.getBody());
-    assertTrue(result.getBody().isSucess());
-    assertNotNull(result.getBody().getData());
-
-
-    @Test
-    void editarUsuario_sucess() throws Exception {
+    void listarUsuarios_null() {
         // Arrange
-        int testSize = 3;
+        when(userService.acharTodosUsuarios(any())).thenReturn(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null));
 
-        var list = new ArrayList<GamesDataViewModel>();
-        for (int i = 0; i < testSize; i++){
-            list.add(getGameDataViewModel(i));
+        // Act
+        var result = userController.acharTodosUsuarios(null);
 
-        }
-        var mockedResponse = allGamesViewModel
-                .builder()
-                .sucess()
-                .count(list.size())
-                .data(list)
-                .build();
-        doReturn(mockedResponse)
-                .when(zeldaServiceMock)
-                .getAllGames();
-
-        var result = zeldaControler.getAllGames();
-
-        assertNotNull(result);
-        assertEquals(httpStatus.OK, result.getStatusCode());
-
-   @Test
-    void deletarUsuario() throws Exception {
-        // Configurar o comportamento do repositório
-        doNothing().when(userRepository).deleteById(1L);
-
-        // Executar o teste
-        mockMvc.perform(delete("/usuarios/1"))
-                .andExpect(status().isNoContent());
-
-        // Verificar se o método do repositório foi chamado
-        verify(userRepository, times(1)).deleteById(1L);
+        // Assert
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, result.getStatusCode());
     }
 
+
+
+    @Test
+    void buscarUsuario_success() throws Exception {
+        // Arrange
+        var userId = 1L;
+        var mockedResponse = UserModel.builder().id(userId).nome("Test User Iago").idade(25).build();
+
+        when(userService.buscarUsuario(eq(userId))).thenReturn(ResponseEntity.ok(Collections.singletonList(mockedResponse)));
+
+        // Act
+        var result = userController.buscarUsuario(userId);
+
+        // Assert
+        assertNotNull(result);
+        assertEquals(HttpStatus.OK, result.getStatusCode());
+        assertNotNull(result.getBody());
+        assertEquals(userId, result.getBody().get(0).getId());
+    }
+
+    @Test
+    void editarUsuario_success() throws Exception {
+        // Arrange
+        var userId = 1L;
+        var userToUpdate = UserModel.builder().id(userId).nome("Updated User Adriel").idade(21).build();
+
+        when(userService.editarUsuario(eq(userId), any())).thenReturn(ResponseEntity.ok(userToUpdate));
+
+        // Act
+        var result = userController.editarUsuario(userId, userToUpdate);
+
+        // Assert
+        assertNotNull(result);
+        assertEquals(HttpStatus.OK, result.getStatusCode());
+        assertNotNull(result.getBody());
+        assertEquals(userId, result.getBody().getId());
+        assertEquals("Updated User Adriel", result.getBody().getNome());
+    }
+
+    @Test
+    void deletarUsuario() throws Exception {
+        // Arrange
+        var userId = 1L;
+        doNothing().when(userRepository).deleteById(userId);
+
+        // Act
+        var result = userController.deletarUsuario(userId);
+
+        // Assert
+        assertNotNull(result);
+        assertEquals(HttpStatus.NO_CONTENT, result.getStatusCode());
+        verify(userRepository, times(1)).deleteById(userId);
+    }
 }
