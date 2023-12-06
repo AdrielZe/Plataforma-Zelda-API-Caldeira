@@ -1,13 +1,15 @@
 package com.zelda.zeldaprojeto.models;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 
 @Entity
 @Data
+
 @Table(name = "users")
 
-
+@Builder
 public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +20,13 @@ public class UserModel {
     @Column(name="idade",nullable=false)
     private int idade;
 
+
+    // Construtor público
+    public UserModel(Long id, String nome, int idade) {
+        this.id = id;
+        this.nome = nome;
+        this.idade = idade;
+    }
     public void setId(Long id){
         this.id = id;
     }
