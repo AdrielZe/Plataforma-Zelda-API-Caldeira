@@ -1,15 +1,13 @@
 # Plataforma-Zelda-API-Caldeira
-<h2>Equipe: "Time 01" </h2>
-<p>Adriel Silveira de Oliveira</p>
-<p>Lucas Vizeu</p>
-<p>Iago Cappeletti</p>
-<p>Maicon Barbosa</p>
-<p>Djenifer Gurskas</p>
+![Thumbnail GitHub](https://i0.wp.com/gamingroi.com/wp-content/uploads/2020/01/The-Legend-of-Zelda-Series.jpg?fit=1200%2C675&ssl=1)
 
 
-# Projeto Final - "Zelda"
+<a href="https://twitter.com/docusaurus"><img src="https://img.shields.io/twitter/follow/docusaurus.svg?style=social" align="right" alt="Twitter Follow" /></a>
+  <a href="#backers" alt="sponsors on Open Collective"><img src="https://opencollective.com/Docusaurus/backers/badge.svg" /></a>
+  <a href="#sponsors" alt="Sponsors on Open Collective"><img src="https://opencollective.com/Docusaurus/sponsors/badge.svg" /></a>
+# Projeto Final - "ZeldaApi"
 
-## Equipe "Time 8"
+<h2>Equipe: "Time 01" 💻</h2>
 
 
 Time Responsavél por desenvolver o Projeto:
@@ -52,14 +50,14 @@ Time Responsavél por desenvolver o Projeto:
       <a href="#">
         <img src="https://avatars.githubusercontent.com/u/102686979?v=4" width="100px; alt="Djenifer Gustav"/><br>
         <sub>
-          <b>Djenifer Gustav</b>
+          <b>Djenifer Gurskv</b>
         </sub>
       </a>
     </td>
   </tr>
 </table>
 
-## Resumo
+## Resumo 🎯
 
 
 
@@ -69,35 +67,52 @@ Nosso desafio envolveu a criação de 2 API em Java, integrada a um banco de dad
 
 ## Descrição do Sistema:
 
+```java
+import SpringBoot;
+import SpringFox;
+import Lombok;
 
+public class Main {
+    public static void main(String args[]){
+        System.out.println("API Zelda");
+    }
+}
+```
 
-## Requisitos :
+## Requisitos 🖱️:
+
 
 ### Cadastro :
+## ✔️ Técnicas e Tecnologias Utilizadas
+- ``Gradle``
+- ``Java 8``
+- ``InteliJ IDEA``
+- ``SpringBoot``
+- ``Testes Unitarios``
 
 
+## 🔨 Funcionalidades do projeto
 
-### :
+- `1` `Cadastro de Autores`: Nosso sistema 
+- `2` `Cadastro de categorias`: O sistema 
+- `3` `Cadastro de livros`: Para cadastrar 
+- `4` `Realizar venda`: Para realizar
+- `5` `Relatório de vendas`:Para saber
 
 
 ### Validações:
 
 
-### Relacionamento entre :
-
-
 
 ## Técnicas Examinadas:
 
-- Utilização de técnicas ninja Spring no Jutsu para criar a API (sem clones de sombra, por favor!).
-- Protejam seus jutsus com testes unitários, afinal, nenhum ninja digno de respeito deixa seus jutsus sem verificar sua eficácia.
+- ``Paradigma de orientação a objetos``
+- ``Metodologias Ageis``
 
-## Observações:
-
-
+## Observações 🔍 :
 
 
-# Agradecimento Especial aos Mentores.
+# Agradecimento Especial aos Nossos Mentores.✨🎓
 
 Nossos Mentores: Diego, Jean e Matheus.
 
@@ -135,6 +150,5 @@ Nossos Mentores: Diego, Jean e Matheus.
 O desafio proposto não apenas testou nossas habilidades técnicas, mas também nos motivou a buscar soluções inovadoras, promovendo o trabalho em equipe e o aprimoramento constante de nossas habilidades de programação. Estamos imensamente agradecidos por transformarem o aprendizado em uma jornada emocionante, repleta de descobertas e conquistas.
 
 Expressamos nossa gratidão por irem além do papel de educadores, tornando-se verdadeiros mentores que inspiram o crescimento e o desenvolvimento de seus alunos. A dedicação, paciência e entusiasmo que compartilharam conosco não passam despercebidos, e estamos profundamente agradecidos por termos tido a oportunidade de aprender e crescer sob sua orientação."
-
 
 
