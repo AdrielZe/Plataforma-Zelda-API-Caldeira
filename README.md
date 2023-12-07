@@ -2,7 +2,7 @@
 ![Thumbnail GitHub](https://i0.wp.com/gamingroi.com/wp-content/uploads/2020/01/The-Legend-of-Zelda-Series.jpg?fit=1200%2C675&ssl=1)
 
 
-<a href="https://twitter.com/docusaurus"><img src="https://img.shields.io/twitter/follow/docusaurus.svg?style=social" align="right" alt="Twitter Follow" /></a>
+
   <a href="#backers" alt="sponsors on Open Collective"><img src="https://opencollective.com/Docusaurus/backers/badge.svg" /></a>
   <a href="#sponsors" alt="Sponsors on Open Collective"><img src="https://opencollective.com/Docusaurus/sponsors/badge.svg" /></a>
 # Projeto Final - "ZeldaApi"
@@ -59,10 +59,7 @@ Time Responsavél por desenvolver o Projeto:
 
 ## Resumo 🎯
 
-
-
-Nosso desafio envolveu a criação de 2 API em Java, integrada a um banco de dados PostgreSQL, Frameworks como Springboot, Swagger, para eficientemente.
-
+Nesse projeto, foi desenvolvida uma aplicação para fanáticos pela franquia Zelda. Nela, os usuários podem se cadastrar e criar uma lista dos seus jogos de Zelda preferidos. Ele foi desenvolvido a partir da uma API para cadastro de usuários, uma API de consulta á API pública de Zelda e um Gateway, que une as outras duas API's e faz a relação entre elas. Também foi desenvolvido um Front-end para ter interação com os usuários.
 
 
 ## Descrição do Sistema:
@@ -92,7 +89,7 @@ public class Main {
 - ``Metodologia KanBan``
 - ``Gateway``
 - ``Testes Unitarios``
-- - ``Gradle``
+- ``Gradle``
 
 
 ## 🔨 Funcionalidades do projeto
