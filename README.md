@@ -59,7 +59,7 @@ Time Responsavél por desenvolver o Projeto:
 
 ## Resumo 🎯
 
-Este é o repositório oficial do projeto "Zelda API - Plataforma para Entusiastas da Franquia Zelda" desenvolvido pela equipe "Time 01". Este é o projeto final da jornada da trilha de programação do Geração Caldeira que visa o desenvolvimento de uma plataforma inovadora e foi estruturado com 3 micro-serviços. 
+
 
 Nosso desafio envolveu a criação de 2 API em Java, integrada a um banco de dados PostgreSQL, Frameworks como Springboot, Swagger, para eficientemente.
 
@@ -111,9 +111,6 @@ public class Main {
 
 ## Observações 🔍 :
 
-- Esse foi o projeto...
-- 
-- 
 
 # Agradecimento Especial aos Nossos Mentores.✨🎓
 
@@ -155,4 +152,3 @@ O desafio proposto não apenas testou nossas habilidades técnicas, mas também 
 Expressamos nossa gratidão por irem além do papel de educadores, tornando-se verdadeiros mentores que inspiram o crescimento e o desenvolvimento de seus alunos. A dedicação, paciência e entusiasmo que compartilharam conosco não passam despercebidos, e estamos profundamente agradecidos por termos tido a oportunidade de aprender e crescer sob sua orientação."
 
 
--- "Time 001".
