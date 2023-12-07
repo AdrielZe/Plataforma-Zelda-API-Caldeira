@@ -15,7 +15,7 @@ Time Responsavél por desenvolver o Projeto:
 <table>
   <tr>
     <td align="center">
-      <a href="#">
+      <a href="https://www.linkedin.com/in/adriel-silveira-de-oliveira-072ba1245?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
        <img src="https://avatars.githubusercontent.com/u/121925084?v=4" width="100px;" alt="Foto de Adriel"/><br>
         <sub>
           <b>Adriel Oliveira</b>
@@ -23,7 +23,7 @@ Time Responsavél por desenvolver o Projeto:
       </a>
     </td>
     <td align="center">
-      <a href="#">
+      <a href="https://www.linkedin.com/in/iago-cappeletti?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
         <img src="https://avatars.githubusercontent.com/u/113685735?v=4" width="100px;" alt="Foto de Adriel"/><br>
         <sub>
           <b>Iago Cappeletti</b>
@@ -31,7 +31,7 @@ Time Responsavél por desenvolver o Projeto:
       </a>
     </td>
     <td align="center">
-      <a href="#">
+      <a href="https://www.linkedin.com/in/lucas-vizeu-3324b0241?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
         <img src="https://avatars.githubusercontent.com/u/102694035?v=4" width="100px; alt="Foto de Lucas Vizeu"/><br>
         <sub>
           <b>Lucas Vizeu</b>
@@ -39,15 +39,15 @@ Time Responsavél por desenvolver o Projeto:
       </a>
     </td>
       <td align="center">
-      <a href="#">
-        <img src="" width="100px;" alt="Foto de Adriel" width="100px; alt="Foto de Maicon Barbosa"/><br>
+      <a href="https://www.linkedin.com/in/dev-maicon?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+        <img src="https://avatars.githubusercontent.com/u/106182410?v=4" width="100px;" alt="Foto de Adriel" width="100px; alt="Foto de Maicon Barbosa"/><br>
         <sub>
           <b>Maicon Barbosa</b>
         </sub>
       </a>
     </td>
       <td align="center">
-      <a href="#">
+      <a href="https://www.linkedin.com/in/jenifer-gurskas???utmsource=shar&utm_campaign=share_via&utm_content=profle&utmmedium=ios_app">
         <img src="https://avatars.githubusercontent.com/u/102686979?v=4" width="100px; alt="Djenifer Gustav"/><br>
         <sub>
           <b>Djenifer Gurskv</b>
@@ -84,32 +84,31 @@ public class Main {
 
 ### Cadastro :
 ## ✔️ Técnicas e Tecnologias Utilizadas
-- ``Gradle``
-- ``Java 8``
-- ``InteliJ IDEA``
+
+- ``Java 17``
+- ``IntelliJ IDEA``
 - ``SpringBoot``
+- ``PostgresSQL``
+- ``Metodologia KanBan``
+- ``Gateway``
 - ``Testes Unitarios``
+- - ``Gradle``
 
 
 ## 🔨 Funcionalidades do projeto
 
-- `1` `Cadastro de Autores`: Nosso sistema 
-- `2` `Cadastro de categorias`: O sistema 
-- `3` `Cadastro de livros`: Para cadastrar 
-- `4` `Realizar venda`: Para realizar
-- `5` `Relatório de vendas`:Para saber
+- `1` `Cadastro de Usuarios`: Create, read, update e delete
+- `2` `Consulta API pública ZeldaAPI`: Para pesquisar os jogos da franquia
+- `3` `Cache dos Jogos da API`: Para caso o sistema da API pública esteja fora do ar 
+- `4` `Tokens`: Para validação de usuários
+- `5` `Front-End`:Para Interação com usuario
 
 
-### Validações:
-
-
-
-## Técnicas Examinadas:
+## Técnicas Examinadas 🔍 :
 
 - ``Paradigma de orientação a objetos``
+- ``Uso Proeficiente do Git``
 - ``Metodologias Ageis``
-
-## Observações 🔍 :
 
 
 # Agradecimento Especial aos Nossos Mentores.✨🎓
